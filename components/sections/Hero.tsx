@@ -34,7 +34,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <span
-            className="font-display text-[22vw] sm:text-[18vw] leading-[0.85] whitespace-nowrap font-bold tracking-[-0.02em]"
+            className="font-display text-[16vw] sm:text-[14vw] leading-[0.85] whitespace-nowrap font-bold tracking-[-0.02em]"
             style={{
               color: 'transparent',
               WebkitTextStroke: '2px #EDE7E0',
@@ -43,19 +43,10 @@ export default function Hero() {
             <span className="inline-block" style={{ WebkitTextStrokeWidth: '2.5px' }}>A</span>
             <span className="inline-block" style={{ WebkitTextStrokeWidth: '1.5px' }}>U</span>
             <span className="inline-block" style={{ WebkitTextStrokeWidth: '2.5px' }}>S</span>
-          </span>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <span className="font-display text-[18vw] sm:text-[14vw] leading-[0.85] text-cream-100/70 italic whitespace-nowrap tracking-[-0.02em]">
-            <span className="inline-block" style={{ fontWeight: 600 }}>Z</span>
-            <span className="inline-block" style={{ fontWeight: 400 }}>E</span>
-            <span className="inline-block" style={{ fontWeight: 600 }}>I</span>
-            <span className="inline-block" style={{ fontWeight: 400 }}>T</span>
+            <span className="inline-block" style={{ WebkitTextStrokeWidth: '2px' }}>Z</span>
+            <span className="inline-block" style={{ WebkitTextStrokeWidth: '1.5px' }}>E</span>
+            <span className="inline-block" style={{ WebkitTextStrokeWidth: '2px' }}>I</span>
+            <span className="inline-block" style={{ WebkitTextStrokeWidth: '1.5px' }}>T</span>
           </span>
         </motion.div>
       </div>
@@ -76,7 +67,7 @@ export default function Hero() {
         </h1>
       </motion.div>
 
-      {/* Desktop: AUS - bottom left */}
+      {/* Desktop: AUSZEIT - bottom left */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -84,7 +75,7 @@ export default function Hero() {
         className="hidden lg:block absolute left-[2%] bottom-[10%] z-30 pointer-events-none"
       >
         <span
-          className="font-display text-[20vw] leading-[0.8] whitespace-nowrap font-bold tracking-[-0.02em]"
+          className="font-display text-[14vw] leading-[0.8] whitespace-nowrap font-bold tracking-[-0.02em]"
           style={{
             color: 'transparent',
             WebkitTextStroke: '2px #EDE7E0',
@@ -93,21 +84,10 @@ export default function Hero() {
           <span className="inline-block" style={{ WebkitTextStrokeWidth: '2.5px' }}>A</span>
           <span className="inline-block" style={{ WebkitTextStrokeWidth: '1.5px' }}>U</span>
           <span className="inline-block" style={{ WebkitTextStrokeWidth: '2.5px' }}>S</span>
-        </span>
-      </motion.div>
-
-      {/* Desktop: ZEIT - right side */}
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="hidden lg:block absolute right-[5%] bottom-[28%] z-30 pointer-events-none text-right"
-      >
-        <span className="font-display text-[13vw] leading-[0.8] text-cream-100/70 italic whitespace-nowrap tracking-[-0.02em]">
-          <span className="inline-block" style={{ fontWeight: 600 }}>Z</span>
-          <span className="inline-block" style={{ fontWeight: 400 }}>E</span>
-          <span className="inline-block" style={{ fontWeight: 600 }}>I</span>
-          <span className="inline-block" style={{ fontWeight: 400 }}>T</span>
+          <span className="inline-block" style={{ WebkitTextStrokeWidth: '2px' }}>Z</span>
+          <span className="inline-block" style={{ WebkitTextStrokeWidth: '1.5px' }}>E</span>
+          <span className="inline-block" style={{ WebkitTextStrokeWidth: '2px' }}>I</span>
+          <span className="inline-block" style={{ WebkitTextStrokeWidth: '1.5px' }}>T</span>
         </span>
       </motion.div>
 
