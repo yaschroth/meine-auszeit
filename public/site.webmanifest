@@ -1,0 +1,21 @@
+{
+  "name": "Meine Auszeit Kosmetikstudio",
+  "short_name": "Meine Auszeit",
+  "description": "Kosmetikstudio in Teesdorf für professionelle Gesichtsbehandlungen, Körperbehandlungen und Schönheitspflege.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDFCFA",
+  "theme_color": "#8B9A6B",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

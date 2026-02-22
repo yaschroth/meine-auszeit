@@ -1,0 +1,463 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   MEINE AUSZEIT - GLOBAL STYLES
+   Organic Elegance Theme
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Primary Colors - Sage Green Spectrum */
+    --color-primary: 139 154 107;
+    --color-primary-dark: 107 122 75;
+    --color-primary-light: 168 184 139;
+
+    /* Secondary Colors - Warm Neutrals */
+    --color-secondary: 212 197 181;
+    --color-secondary-light: 237 231 224;
+    --color-accent: 196 167 125;
+
+    /* Background Colors */
+    --color-bg-primary: 253 252 250;
+    --color-bg-secondary: 245 242 237;
+    --color-bg-dark: 122 139 92;
+
+    /* Text Colors */
+    --color-text-primary: 61 61 61;
+    --color-text-secondary: 107 107 107;
+    --color-text-light: 253 252 250;
+
+    /* Spacing Scale */
+    --section-padding: clamp(4rem, 10vw, 8rem);
+    --container-padding: clamp(1rem, 5vw, 2rem);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream-50 text-neutral font-body;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  /* Typography Base Styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  /* Selection Styling */
+  ::selection {
+    @apply bg-sage-300 text-sage-900;
+  }
+
+  /* Focus Styling */
+  :focus-visible {
+    @apply outline-none ring-2 ring-sage-400 ring-offset-2 ring-offset-cream-50;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cream-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sage-300 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-sage-400;
+  }
+}
+
+@layer components {
+  /* Container Utility */
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section Padding */
+  .section-padding {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+
+  /* Elegant Button Styles with Micro-interactions */
+  .btn-elegant {
+    @apply relative inline-flex items-center justify-center gap-2 px-8 py-3.5
+           font-body font-medium text-sm tracking-wider uppercase
+           transition-all duration-300 ease-elegant
+           overflow-hidden;
+  }
+
+  /* Shine effect overlay */
+  .btn-elegant::before {
+    content: '';
+    @apply absolute inset-0 w-full h-full;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 60%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .btn-elegant:hover::before {
+    transform: translateX(100%);
+  }
+
+  .btn-elegant-primary {
+    @apply btn-elegant bg-sage-400 text-cream-50
+           hover:bg-sage-500 hover:shadow-soft-lg hover:-translate-y-0.5
+           active:scale-[0.98] active:translate-y-0;
+  }
+
+  .btn-elegant-secondary {
+    @apply btn-elegant bg-transparent border-2 border-sage-400 text-sage-500
+           hover:bg-sage-400 hover:text-cream-50 hover:shadow-soft hover:-translate-y-0.5
+           active:scale-[0.98] active:translate-y-0;
+  }
+
+  .btn-elegant-light {
+    @apply btn-elegant bg-cream-50 text-sage-500
+           hover:bg-cream-100 hover:shadow-soft hover:-translate-y-0.5
+           active:scale-[0.98] active:translate-y-0;
+  }
+
+  /* Card Styles */
+  .card-elegant {
+    @apply relative overflow-hidden rounded-lg bg-white shadow-soft
+           transition-all duration-500 ease-elegant
+           hover:shadow-soft-lg hover:-translate-y-1;
+  }
+
+  /* Image Overlay Effect */
+  .image-overlay {
+    @apply relative overflow-hidden;
+  }
+
+  .image-overlay::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-sage-900/40 via-transparent to-transparent
+           opacity-60 transition-opacity duration-300;
+  }
+
+  .image-overlay:hover::after {
+    @apply opacity-40;
+  }
+
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-sage-500 via-sage-400 to-sage-500
+           bg-clip-text text-transparent;
+  }
+
+  /* Decorative Line */
+  .line-accent {
+    @apply w-16 h-0.5 bg-gradient-to-r from-sage-400 to-cream-400;
+  }
+
+  /* Section Heading Component */
+  .section-heading {
+    @apply text-center max-w-3xl mx-auto mb-12 md:mb-16;
+  }
+
+  .section-heading__label {
+    @apply text-sm font-body font-medium tracking-[0.25em] uppercase text-sage-400 mb-4;
+  }
+
+  .section-heading__title {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl text-neutral mb-4;
+  }
+
+  .section-heading__subtitle {
+    @apply text-lg text-neutral/70 max-w-2xl mx-auto;
+  }
+
+  /* Organic Shape Decorations */
+  .organic-blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  .organic-blob-alt {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  /* Noise Texture Overlay */
+  .noise-overlay {
+    @apply pointer-events-none fixed inset-0 z-50 opacity-[0.015];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* Paper Texture - grain for light backgrounds */
+  .texture-paper {
+    position: relative;
+  }
+
+  .texture-paper::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-[0.18];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)'/%3E%3C/svg%3E");
+  }
+
+  /* Linen Texture - crosshatch pattern for elegant feel */
+  .texture-linen {
+    position: relative;
+  }
+
+  .texture-linen::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-[0.06];
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        currentColor 2px,
+        currentColor 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        currentColor 2px,
+        currentColor 3px
+      );
+    background-size: 8px 8px;
+  }
+
+  /* Grain Texture - noise for green backgrounds */
+  .texture-grain {
+    position: relative;
+  }
+
+  .texture-grain::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-[0.17];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  }
+
+  /* Stripes Pattern - for green backgrounds */
+  .texture-hexagon {
+    position: relative;
+  }
+
+  .texture-hexagon::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    opacity: 0.07;
+    background-image: url('/twine-moss-4510-mm-architextures.jpg');
+    background-repeat: repeat;
+    background-size: 200px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: opacity;
+  }
+
+  /* Wave Pattern - for beige backgrounds */
+  .texture-hexagon-green {
+    position: relative;
+  }
+
+  .texture-hexagon-green::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    opacity: 0.2;
+    background-image: url('/just-waves.webp');
+    background-repeat: repeat;
+    background-size: 200px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: opacity;
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-sage-900/70 backdrop-blur-md border border-sage-700/20;
+  }
+
+  /* Animated Underline */
+  .animated-underline {
+    @apply relative inline-block;
+  }
+
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-current
+           transition-all duration-300 ease-elegant;
+    transform-origin: left center;
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Scale up link on hover */
+  .link-hover-scale {
+    @apply transition-transform duration-200;
+  }
+
+  .link-hover-scale:hover {
+    @apply scale-105;
+  }
+
+  /* Icon bounce on hover */
+  .icon-hover-bounce:hover {
+    animation: iconBounce 0.5s ease;
+  }
+
+  @keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-4px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-2px); }
+  }
+
+  /* Pulse on hover */
+  .hover-pulse:hover {
+    animation: pulse 1s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* Form Styles */
+  .input-elegant {
+    @apply w-full px-4 py-3.5 bg-cream-50 border border-cream-300
+           rounded-md font-body text-neutral placeholder:text-neutral/40
+           transition-all duration-200
+           focus:border-sage-400 focus:ring-2 focus:ring-sage-400/20 focus:outline-none;
+  }
+
+  .textarea-elegant {
+    @apply input-elegant min-h-[150px] resize-y;
+  }
+
+  /* Loading Spinner */
+  .spinner {
+    @apply w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin;
+  }
+}
+
+@layer utilities {
+  /* Text Balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hide Scrollbar */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Aspect Ratios */
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-landscape {
+    aspect-ratio: 4 / 3;
+  }
+
+  .aspect-wide {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Animation Delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-800 { animation-delay: 800ms; }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-sage-600 via-sage-400 to-sage-600
+           bg-clip-text text-transparent bg-[length:200%_auto]
+           animate-[gradient_3s_ease-in-out_infinite];
+  }
+
+  /* Parallax Helper */
+  .parallax {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Custom Animations */
+@keyframes gradient {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
