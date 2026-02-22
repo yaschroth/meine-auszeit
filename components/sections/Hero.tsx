@@ -67,12 +67,12 @@ export default function Hero() {
         </h1>
       </motion.div>
 
-      {/* Desktop: AUSZEIT - bottom left */}
+      {/* Desktop: AUSZEIT - bottom right */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="hidden lg:block absolute left-[2%] bottom-[10%] z-30 pointer-events-none"
+        className="hidden lg:block absolute right-[2%] bottom-[10%] z-30 pointer-events-none"
       >
         <span
           className="font-display text-[14vw] leading-[0.8] whitespace-nowrap font-bold tracking-[-0.02em]"
